@@ -26,10 +26,10 @@
     <ClCompile Include="DynamicArray.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="SequentialStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SequentialStack.cpp">
+    <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,6 +20,7 @@ public:
 	bool push(T value);
 	T pop();
 	T GetTop();
+	SequentialStack& operator = (SequentialStack rhs);
 };
 
 #endif

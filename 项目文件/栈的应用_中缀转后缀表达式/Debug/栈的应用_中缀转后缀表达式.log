@@ -1,31 +1,30 @@
-﻿  DynamicArray.cpp
-  SequentialStack.cpp
+﻿  SequentialStack.cpp
   test.cpp
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\test.cpp(23,20): warning C4018: “<”: 有符号/无符号不匹配
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\DynamicArray.cpp(34,21): warning C4018: “<”: 有符号/无符号不匹配
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\DynamicArray.cpp(30): message : 在编译 类 模板 成员函数“bool DynamicArray<T>::add(T)”时
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\test.cpp(23,20): warning C4018: “<”: 有符号/无符号不匹配
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\DynamicArray.cpp(34,21): warning C4018: “<”: 有符号/无符号不匹配
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\DynamicArray.cpp(30): message : 在编译 类 模板 成员函数“bool DynamicArray<T>::add(T)”时
           with
           [
               T=char
           ]
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\SequentialStack.cpp(31): message : 查看对正在编译的函数 模板 实例化“bool DynamicArray<T>::add(T)”的引用
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\SequentialStack.cpp(31): message : 查看对正在编译的函数 模板 实例化“bool DynamicArray<T>::add(T)”的引用
           with
           [
               T=char
           ]
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\SequentialStack.cpp(5): message : 在编译 类 模板 成员函数“SequentialStack<char>::SequentialStack(void)”时
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\test.cpp(17): message : 查看对正在编译的函数 模板 实例化“SequentialStack<char>::SequentialStack(void)”的引用
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\test.cpp(17): message : 查看对正在编译的 类 模板 实例化“SequentialStack<char>”的引用
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\DynamicArray.cpp(50,16): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\DynamicArray.cpp(49): message : 在编译 类 模板 成员函数“bool DynamicArray<T>::out(void)”时
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\SequentialStack.cpp(5): message : 在编译 类 模板 成员函数“SequentialStack<char>::SequentialStack(void)”时
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\test.cpp(17): message : 查看对正在编译的函数 模板 实例化“SequentialStack<char>::SequentialStack(void)”的引用
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\test.cpp(17): message : 查看对正在编译的 类 模板 实例化“SequentialStack<char>”的引用
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\DynamicArray.cpp(50,16): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\DynamicArray.cpp(49): message : 在编译 类 模板 成员函数“bool DynamicArray<T>::out(void)”时
           with
           [
               T=char
           ]
-E:\学习\GithubProject\BYWLQK.github.io\项目文件\栈的应用_中缀转后缀表达式\SequentialStack.cpp(41): message : 查看对正在编译的函数 模板 实例化“bool DynamicArray<T>::out(void)”的引用
+E:\文件夹\程序\新项目\栈的应用_中缀转后缀表达式\SequentialStack.cpp(41): message : 查看对正在编译的函数 模板 实例化“bool DynamicArray<T>::out(void)”的引用
           with
           [
               T=char
           ]
   正在生成代码...
-  栈的应用_中缀转后缀表达式.vcxproj -> E:\学习\GithubProject\BYWLQK.github.io\项目文件\ShuJuJieGou\Debug\栈的应用_中缀转后缀表达式.exe
+  栈的应用_中缀转后缀表达式.vcxproj -> E:\文件夹\程序\新项目\ShuJuJieGou\Debug\栈的应用_中缀转后缀表达式.exe

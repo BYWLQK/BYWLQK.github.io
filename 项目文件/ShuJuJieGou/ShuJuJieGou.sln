@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "栈的应用_检验左右�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "栈的应用_中缀转后缀表达式", "..\栈的应用_中缀转后缀表达式\栈的应用_中缀转后缀表达式.vcxproj", "{6215421C-1371-47FA-A86A-259C764DF0AF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "迷宫问题", "..\迷宫问题\迷宫问题.vcxproj", "{035888E4-25B3-455C-9D95-CC91F279A9C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{6215421C-1371-47FA-A86A-259C764DF0AF}.Release|x64.Build.0 = Release|x64
 		{6215421C-1371-47FA-A86A-259C764DF0AF}.Release|x86.ActiveCfg = Release|Win32
 		{6215421C-1371-47FA-A86A-259C764DF0AF}.Release|x86.Build.0 = Release|Win32
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Debug|x64.ActiveCfg = Debug|x64
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Debug|x64.Build.0 = Debug|x64
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Debug|x86.ActiveCfg = Debug|Win32
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Debug|x86.Build.0 = Debug|Win32
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Release|x64.ActiveCfg = Release|x64
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Release|x64.Build.0 = Release|x64
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Release|x86.ActiveCfg = Release|Win32
+		{035888E4-25B3-455C-9D95-CC91F279A9C2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

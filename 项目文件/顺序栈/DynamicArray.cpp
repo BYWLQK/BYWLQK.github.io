@@ -47,7 +47,7 @@ bool DynamicArray<T>::add(T value) {
 
 template<class T>
 bool DynamicArray<T>::out() {
-	_pArr[_pos--] == 0;
+	_pos--;
 	return true;
 }
 
@@ -55,3 +55,13 @@ template<class T>
 T& DynamicArray<T>::operator [] (int i) {
 	return _pArr[i];
 };
+
+template<class T>
+DynamicArray<T>& DynamicArray<T>::operator = (DynamicArray<T>& rhs) {
+	_pos = 0;
+	_size = 10;
+	for (int i = 0; i < rhs._size;i++) {
+		this->add(rhs[i]);
+	}
+	return *this;
+}

@@ -19,6 +19,7 @@ public:
 	bool out();
 
 	T& operator [] (int i);
+	DynamicArray& operator = (DynamicArray& rhs);
 };
 
 #endif
