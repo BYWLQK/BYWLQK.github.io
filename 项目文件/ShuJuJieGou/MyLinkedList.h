@@ -10,10 +10,10 @@ class LinkedList     //构造链表LinkedList<f>类，有节点Node、大小size、记录头地址
 {
 public:
     struct Node {     //构造结构体Node，有分数数值data，储存下一个节点地址的指针next，用于矩阵中的的指针mat
-        f data;
-        LinkedList* mat;
+        f coef;
+        f exp;
         Node* next;
-        Node(int a = 0, Node* b = nullptr) : next(b), mat(nullptr) {}
+        Node(int a = 0, f b = 0) : next(nullptr), coef(0),exp(0) {}
     };
 
 private:
@@ -102,10 +102,35 @@ public:
     输入：位置pos，节点数值value
     输出：无
     ******************************************/
-    void insert(int pos, f value)
+    void insert(int pos, f value1,f value2)
     {
         Node* p1 = nullptr, * p2 = nullptr;
         p1 = advance(pos - 1);
+        if (p1->next == nullptr)
+        {
+            p1->next = new Node;
+            p1->next->coef = value1;
+            p1->next->exp = value2;
+        }
+        else
+        {
+            p2 = p1->next;
+
+            p1->next = new Node;
+            p1->next->next = p2;
+
+            p1->next->coef = value1;
+            p1->next->exp = value2;
+        }
+
+        size++;
+    }
+
+    void insert(Node* pos, f value1, f value2)
+    {
+        Node* p1 = nullptr, * p2 = nullptr;
+        p1 = this->head;
+        while (p1->next != pos) { p1 = p1->next; }
         if (p1->next == nullptr)
         {
             p1->next = new Node;
@@ -117,10 +142,43 @@ public:
             p1->next = new Node;
             p1->next->next = p2;
 
-            p1->next->data = value;
+            p1->next->coef = value1;
+            p1->next->exp = value2;
         }
 
         size++;
+    }
+
+    void add(LinkedList& rhs) {
+        Node* p = nullptr;
+        Node* q=nullptr;
+        p = this->head->next;
+        q = rhs.head->next;
+        while (p!=nullptr&&q!=nullptr) {
+        
+            if (p->exp < q->exp) {
+                p = p->next;
+            }
+            else if(p->exp > q->exp){
+                insert(p,q->coef,q->exp);
+                q = q->next;
+            }
+            else if(p->exp == q->exp){
+                p->coef = p->coef + q->coef;
+                if (p->coef == 0) {
+                    Node* t = p->next;
+                    remove(p);
+                    p = t;
+                }
+                Node* t = q->next;
+                rhs.remove(q);
+                q = t;
+            }
+        
+        }
+        if (q != nullptr) {
+            insert(this->size,q->coef,q->exp);
+        }
     }
 
     /******************************************
@@ -135,6 +193,30 @@ public:
         if (p1->next->next == nullptr)
         {
             delete p1->next;
+            p1->next = nullptr;
+        }
+        else
+        {
+            p2 = p1->next->next;
+
+            delete p1->next;
+
+            p1->next = p2;
+        }
+
+        size--;
+    }
+
+    void remove(Node* pos)
+    {
+        Node* p1 = nullptr, * p2 = nullptr;
+        p1 = this->head;
+        while (p1->next != pos) { p1 = p1->next; }
+        if (p1->next->next == nullptr)
+        {
+            delete p1->next;
+            p1->next = nullptr;
+
         }
         else
         {
@@ -184,7 +266,7 @@ public:
         p1 = head->next;
         for (; p1 != nullptr;)
         {
-            cout << p1->data << " ";
+            cout << p1->coef<<"x"<<p1->exp << " ";
             p1 = p1->next;
         }
         cout << endl;
