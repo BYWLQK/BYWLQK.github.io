@@ -28,10 +28,12 @@ int main() {
 		int it = -1;
 		if (cht >= '0' && cht <= '9') {
 			if (i == s1.size() - 1) {
-				s2+='#';
-				s2+=cht;
+				s2 += cht;
 				postexp.push(cht);
-				postexp.push('#');
+				if (postexp.GetTop() >= '0' && postexp.GetTop() <= '9') {
+					s2 += '#';
+					postexp.push('#');
+				}
 			}
 			else {
 				s2+=cht;
@@ -40,21 +42,25 @@ int main() {
 		}
 		else if (sStack.StackEmpty()) {
 			if (cht != '('){
-				s2+='#';
-				postexp.push('#');
+				if (postexp.GetTop() >= '0' && postexp.GetTop() <= '9') {
+					s2 += '#';
+					postexp.push('#');
+				}
 			}
 				
 			sStack.push(cht);
 		}
 		else if (sStack.GetTop() == '(') {
-			s2+='#';
-			postexp.push('#');
+			if (postexp.GetTop() >= '0' && postexp.GetTop() <= '9') {
+				s2 += '#';
+				postexp.push('#');
+			}
 			sStack.push(cht);
 		}
 		else if (cht != '(' && cht != ')') {
 			if (toBool(cht) > toBool(sStack.GetTop())) {
-				if(postexp.GetTop()>='0'&&postexp.GetTop()<='9'){
-					s2+='#';
+				if (postexp.GetTop() >= '0' && postexp.GetTop() <= '9') {
+					s2 += '#';
 					postexp.push('#');
 				}
 				sStack.push(cht);
@@ -64,8 +70,9 @@ int main() {
 					s2+='#';
 					postexp.push('#');
 				}
-				s2+=sStack.pop();
-				postexp.push(sStack.pop());
+				char t = sStack.pop();
+				s2 += t;
+				postexp.push(t);
 				sStack.push(cht);
 			}
 		}
@@ -73,18 +80,21 @@ int main() {
 			sStack.push(cht);
 		}
 		else if (cht==')') {
-			s2+='#';
-			postexp.push('#');
-			s2+=sStack.pop();
-			postexp.push(sStack.pop());
+			if (postexp.GetTop() >= '0' && postexp.GetTop() <= '9') {
+				s2 += '#';
+				postexp.push('#');
+			}
+			char t = sStack.pop();
+			s2 += t;
+			postexp.push(t);
 			sStack.pop();
 		}
 	}
 	while (!sStack.StackEmpty()) {
-		s2+=sStack.pop();
-		postexp.push(sStack.pop());
+		char t = sStack.pop();
+		s2 += t;
+		postexp.push(t);
 	}
-	cout<<postexp.GetTop();
 	cout<<s2<<endl;
 	cout<<"½á¹ûÎª£º";
 	cout<<result(postexp);
@@ -99,41 +109,21 @@ int main() {
 int result(SequentialStack<char>& stackT){
 	int m,n;
 	char ch =stackT.pop();
+	if (!stackT.StackEmpty()) {
+		m = stackT.GetTop() == '#' ? toInt(stackT) : result(stackT);
+		n = stackT.GetTop() == '#' ? toInt(stackT) : result(stackT);
+	}
+	else {
+		return 0;
+	}
 	switch(ch){
 	case'+':
-		if(!stackT.StackEmpty()){
-			m =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-			n =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-		}else{
-			return 0;
-		}
-		cout<<n+m<<endl;
 		return n+m;
 	case'-':
-		if(!stackT.StackEmpty()){
-			m =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-			n =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-		}else{
-			return 0;
-		}
-		
 		return n-m;
 	case'*':
-		if(!stackT.StackEmpty()){
-			m =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-			n =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-		}else{
-			return 1;
-		}
 		return n*m;
 	case'/':
-		if(!stackT.StackEmpty()){
-			m =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-			n =stackT.GetTop()=='#'?toInt(stackT):result(stackT);
-		}else{
-			return 1;
-		}
-		cout<<n/m<<endl;
 		return n/m;
 	default: return 0;
 	}
